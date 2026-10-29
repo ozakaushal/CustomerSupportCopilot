@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard] # server for running fast api
+jinja2 # web UI
+python-multipart
+pydantic-settings # env management
+langgraph
+langchain-core
+langchain-community
+langchain-openai
+langchain-tavily
+langchain-pinecone
+langchain-text-splitters
+pinecone # vector store
+openai
+pypdf
+python-docx
+python-dotenv
