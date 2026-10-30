@@ -1,0 +1,1 @@
+# when you import function from Core folder from app.core import ... this constructor is needed
