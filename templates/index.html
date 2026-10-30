@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ app_name }}</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <span class="logo-mark">A</span>
+      <div>
+        <strong>Atharva ITS</strong>
+        <small>Support Copilot</small>
+      </div>
+    </div>
+    <button id="openUpload" class="btn btn-outline">Upload document</button>
+  </header>
+
+  <div class="layout">
+    <main class="chat">
+      <div id="messages" class="messages">
+        <div class="msg bot">
+          <p>Hi! I can help with VPN, passwords, MFA, laptops, email and other IT questions.
+          I look in the Atharva ITS knowledge base first and only search the web if I can't find it there.</p>
+        </div>
+      </div>
+
+      <div class="suggestions">
+        <button type="button">How do I connect to the VPN from home?</button>
+        <button type="button">What are the password rules?</button>
+        <button type="button">My laptop got stolen, what do I do?</button>
+        <button type="button">Is Microsoft Teams down right now?</button>
+      </div>
+
+      <form id="askForm" class="ask">
+        <textarea id="question" rows="1" placeholder="Type your question..." required></textarea>
+        <button type="submit" class="btn btn-primary">Send</button>
+      </form>
+    </main>
+
+    <aside class="details">
+      <h2>How it was answered</h2>
+      <p class="answered-by">Answered by: <span id="answeredBy">-</span></p>
+      <ol id="steps" class="steps">
+        <li class="placeholder">Ask something to see the steps here.</li>
+      </ol>
+    </aside>
+  </div>
+
+  <dialog id="uploadDialog">
+    <form method="dialog" class="dialog-head">
+      <h2>Add to knowledge base</h2>
+      <button class="close" aria-label="Close">&times;</button>
+    </form>
+    <p>PDF, Word, Markdown or text files. The file is split into chunks and stored in Pinecone.</p>
+    <label>Ingest token <input id="token" type="password" autocomplete="off"></label>
+    <label>File <input id="file" type="file" accept=".pdf,.docx,.md,.txt"></label>
+    <button id="uploadBtn" class="btn btn-primary">Upload</button>
+    <p id="uploadMsg" class="upload-msg"></p>
+  </dialog>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
